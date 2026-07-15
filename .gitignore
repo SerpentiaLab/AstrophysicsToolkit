@@ -1,0 +1,11 @@
+# Emacs
+*~
+
+# Build directory
+build/
+
+# Object files
+*.o
+
+# Executables
+*.out
