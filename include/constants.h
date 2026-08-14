@@ -24,6 +24,9 @@
 //============================================================
 //============================================================
 
+
+// Pi
+
 // Speed of light
 
 // Universal gravitational constant
@@ -72,6 +75,7 @@
 
 // Solar effective temperature
 
+// Solar bolometric magnitude
 
 //-------------------------
 // Earth
@@ -94,7 +98,7 @@
 // Master in Advanced Physics, Universitat de Valencia.
 // Some particle constants use higher-precision SI values CODATA.
 
-
+constexpr long double pi = 3.14159265358979323846L; // pi constant
 constexpr long double c = 2.99792458e8L; // Speed of light [m/s]
 constexpr long double G = 6.673e-11L; // Universal gravitational constant [m^3 kg^-1 s^-2]
 constexpr long double k_B = 1.3807e-23L; // Boltzmann constant [J/K]
@@ -124,6 +128,7 @@ constexpr long double M_sun = 1.989e30L; // Solar mass [kg]
 constexpr long double R_sun = 6.960e8L; // Solar radius [m]
 constexpr long double L_sun = 3.828e26L; // Solar luminosity (bolometric) [W]
 constexpr long double T_eff_sun = 5772L; // Effective temperature of the Sun [K]
+constexpr long double M_bol_sun = 4.74L; // Solar bolometric magnitude (dimensionless)
 
 //-------------------------
 // Earth
