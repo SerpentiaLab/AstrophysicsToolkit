@@ -38,6 +38,9 @@ long double parsec_to_meter(long double parsec);
 long double meter_to_angstrom(long double meter);
 long double angstrom_to_meter(long double angstrom);
 
+long double meter_to_nanometer(long double meter);
+long double nanometer_to_meter(long double nanometer);
+
 long double meter_to_femtometer(long double meter);
 long double femtometer_to_meter(long double femtometer);
 

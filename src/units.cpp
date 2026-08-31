@@ -10,6 +10,7 @@ constexpr long double meters_per_kilometer  = 1000.0L;
 constexpr long double meters_per_AU          = 1.495978707e11L;
 constexpr long double meters_per_light_year  = 9.4607304725808e15L;
 constexpr long double meters_per_parsec      = 3.0856775814913673e16L;
+constexpr long double meters_per_nanometer   = 1.0e-9L;
 constexpr long double meters_per_angstrom    = 1.0e-10L;
 constexpr long double meters_per_femtometer  = 1.0e-15L;
 
@@ -133,6 +134,19 @@ long double parsec_to_meter(long double parsec)
 
 }
 
+long double meter_to_nanometer(long double meter)
+{
+
+  return meter / meters_per_nanometer;
+}
+
+long double nanometer_to_meter(long double nanometer)
+{
+
+  return nanometer * meters_per_nanometer;
+  
+}
+
 
 long double meter_to_angstrom(long double meter)
 
@@ -150,6 +164,8 @@ long double angstrom_to_meter(long double angstrom)
 
 }
 
+
+
 long double meter_to_femtometer(long double meter)
 
 {
@@ -157,8 +173,8 @@ long double meter_to_femtometer(long double meter)
   return meter / meters_per_femtometer;
   
 }
-  
-  
+
+
 long double femtometer_to_meter(long double femtometer)
 
 {

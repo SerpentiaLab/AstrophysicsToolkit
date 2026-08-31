@@ -57,6 +57,7 @@
 
 // Thomson cross-section
 
+// Wien constant
 
 //============================================================
 // Astronomical Reference Values
@@ -101,8 +102,8 @@
 constexpr long double pi = 3.14159265358979323846L; // pi constant
 constexpr long double c = 2.99792458e8L; // Speed of light [m/s]
 constexpr long double G = 6.673e-11L; // Universal gravitational constant [m^3 kg^-1 s^-2]
-constexpr long double k_B = 1.3807e-23L; // Boltzmann constant [J/K]
-constexpr long double h = 6.6261e-34L; // Planck constant [J s]
+constexpr long double k_B = 1.380649e-23L; // Boltzmann constant [J/K]
+constexpr long double h = 6.62607015e-34L; // Planck constant [J s]
 constexpr long double sigma = 5.6705e-8L; // Stefan-Boltzmann constant [W m^-2 K^-4]
 constexpr long double a = 7.5659e-16L; // Radiation constant [J m^-3 K^-4]
 constexpr long double e = 1.609e-19L; // Elementary charge [C]
@@ -114,7 +115,7 @@ constexpr long double m_e = 9.1093837139e-31L; // Electron mass [kg]
 constexpr long double m_p = 1.67262192595e-27L; // Proton mass [kg]
 constexpr long double m_n = 1.67492750056e-27L; // Neutron mass [kg]
 constexpr long double sigma_T = 6.6524e-29L; // Thomson cross-section [m^2]
-
+constexpr long double b_wien = 2.897771955e-3L; // Wien constant [m K]
 
 //============================================================
 // Astronomical Reference Values

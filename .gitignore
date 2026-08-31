@@ -9,3 +9,10 @@ build/
 
 # Executables
 *.out
+
+# Test executables
+test_radiation
+test_numerical
+
+# Generated data
+planck_curve.dat
