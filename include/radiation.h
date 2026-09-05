@@ -93,3 +93,26 @@ struct PlanckPeakResult
 
 PlanckPeakResult planck_wavelength_max_from_temperature(long double temperature);
 
+//=====================================================================================
+// Temperature, unit [K]
+// Return value: [W m^-2]
+//=====================================================================================
+
+long double radiative_flux_at_the_surface(long double temperature);
+
+//=====================================================================================
+// Temperature, unit [K]
+// Radius, unit [m]
+// Return value: [W]
+//=====================================================================================
+
+long double stellar_luminosity_from_temperature_and_radius(long double radius, long double temperature);
+
+
+//=====================================================================================
+// Surface flux, unit [W m^-2]
+//
+// Return value: [W m^-2 sr^-1]
+//=====================================================================================
+
+long double surface_brightness_from_surface_flux(long double surface_flux);

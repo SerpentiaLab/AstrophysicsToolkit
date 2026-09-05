@@ -15,7 +15,7 @@
 
 //========================================================================================================
 // Luminosity, unit Watts [W].
-// 
+//
 // Return value: Absolute bolometric magnitude [dimensionless].
 //========================================================================================================
 
@@ -66,3 +66,41 @@ long double distance_modulus_from_distance(long double distance);
 
 
 long double distance_from_distance_modulus(long double distance_modulus);
+
+
+//==============================================================================================================
+// Parallax, unit [arcsec]
+//
+// Return value: [pc].
+//==============================================================================================================
+
+
+long double distance_from_parallax(long double parallax);
+
+//==============================================================================================================
+// Distance, unit [pc]
+//
+// Return value: [arcsec].
+//==============================================================================================================
+
+long double parallax_from_distance(long double distance);
+
+//==============================================================================================================
+//Radius, unit [m]
+//Distance, unit [m]
+//
+// Return value: [rad].
+//==============================================================================================================
+
+
+long double angular_radius_from_radius_and_distance(long double radius, long double distance);
+
+
+//==============================================================================================================
+// Angular radius, unit [rad]
+//
+// Return value: [sr].
+//==============================================================================================================
+// Uses the small-angle approximation.
+
+long double solid_angle_from_angular_radius(long double angular_radius);

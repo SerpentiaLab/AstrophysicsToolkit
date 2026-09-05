@@ -35,7 +35,6 @@ long double peak_wavelength_from_temperature(long double temperature)
 {
   if (temperature <= 0)
     {
-     
       return  std::numeric_limits<long double>::quiet_NaN();
 
        }
@@ -45,7 +44,6 @@ long double peak_wavelength_from_temperature(long double temperature)
   return b_wien / temperature;
 }
 
-
 long double temperature_from_peak_wavelength(long double wavelength)
 
 {
@@ -54,11 +52,9 @@ long double temperature_from_peak_wavelength(long double wavelength)
     {
 
       return  std::numeric_limits<long double>::quiet_NaN();
-      
     }
 
   return b_wien / wavelength;
-
 
 }
 
@@ -67,7 +63,7 @@ long double planck_wavelength(long double wavelength, long double temperature)
 {
 
   if(wavelength <= 0 || temperature <= 0)
-    
+
     {
 
        return  std::numeric_limits<long double>::quiet_NaN();
@@ -95,7 +91,6 @@ long double planck_frequency(long double frequency, long double temperature)
     {
 
        return  std::numeric_limits<long double>::quiet_NaN();
-      
 
     }
 
@@ -107,13 +102,12 @@ long double planck_frequency(long double frequency, long double temperature)
 
   long double denominator_nu = c * c * exponent_term_nu;
 
-  return numerator_nu / denominator_nu; 
+  return numerator_nu / denominator_nu;
 }
 
-
 PlanckPeakResult planck_wavelength_max_from_temperature(long double temperature)
-{
 
+{
 
   if (temperature <= 0)
 
@@ -129,14 +123,13 @@ PlanckPeakResult planck_wavelength_max_from_temperature(long double temperature)
       result.converged = false;
 
       return result;
-
     }
 
   auto planck_peak_equation = [](long double x)
 
   {
 
-    return 5 * (1 - std::exp(-x)) - x; 
+    return 5 * (1 - std::exp(-x)) - x;
 
   };
 
@@ -171,13 +164,59 @@ PlanckPeakResult planck_wavelength_max_from_temperature(long double temperature)
       result.iterations = bisection_result.iterations;
       result.converged = true;
 
-    return result;
+      return result;
+}
+
+long double radiative_flux_at_the_surface(long double temperature)
+
+ {
+
+   if(temperature <= 0)
+
+     {
+
+       return  std::numeric_limits<long double>::quiet_NaN();
+
+     }
 
 
-    
+   return sigma * std::pow(temperature, 4);
 
-} 
+ }
+
+long double stellar_luminosity_from_temperature_and_radius(long double radius, long double temperature)
+
+{
+
+  if(radius <= 0 || temperature <= 0)
+
+    {
+
+      return  std::numeric_limits<long double>::quiet_NaN();
 
 
+    }
+
+  return 4 * pi * radiative_flux_at_the_surface(temperature) * std::pow(radius, 2);
+
+}
+
+long double surface_brightness_from_surface_flux(long double surface_flux)
+
+{
+
+  if(surface_flux < 0)
 
 
+    {
+
+       return  std::numeric_limits<long double>::quiet_NaN();
+
+
+    }
+
+
+  return surface_flux / pi;
+
+
+}

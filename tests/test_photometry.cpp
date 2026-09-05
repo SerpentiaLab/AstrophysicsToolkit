@@ -41,6 +41,29 @@ int main()
  long double conversion_meter_to_parsec = meter_to_parsec(distance);
 
  std::cout << conversion_meter_to_parsec << " pc" <<std::endl;
- 
- 
+
+ long double parallax = 0.01L;
+
+ long double distance_in_pc = distance_from_parallax(parallax);
+
+ std::cout << "Distance from parallax: " << distance_in_pc << " pc" << std::endl;
+
+ long double recovered_parallax = parallax_from_distance(distance_in_pc);
+
+ std::cout << "Recovered parallax: " << recovered_parallax << " arcsec" << std::endl;
+
+ long double distance_test = parsec_to_meter(100.0L);
+ long double radius_test = 5.20L * R_sun;
+
+ long double angular_radius = angular_radius_from_radius_and_distance(radius_test, distance_test);
+
+  std::cout << "Angular radius: " << angular_radius << " rad" << std::endl;
+
+
+ long double solid_angle = solid_angle_from_angular_radius(angular_radius);
+
+  std::cout << "Solid angle: "<< solid_angle << " sr" << std::endl;
+
+
+
 }

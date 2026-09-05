@@ -72,4 +72,38 @@ long double femtometer_to_meter(long double femtometer);
 
 //============================================================
 // Angle
+//
+// Radian, unit [rad]
+// Return value: [arcsec]
 //============================================================
+
+long double radian_to_arcsecond(long double radian);
+
+//============================================================
+// Arcsecond, unit [arcsec]
+//
+// Return value: Radian, unit [rad]
+//============================================================
+
+
+long double arcsecond_to_radian(long double arcsecond);
+
+//============================================================
+// Steradian, unit [sr]
+//
+// Return value: unit, [arcsec^2].
+//============================================================
+
+
+
+long double steradian_to_square_arcsecond(long double steradian);
+
+
+
+//============================================================
+// Square arcsecond , unit [arcsec^2]
+//
+// Return value: unit, [sr].
+//============================================================
+
+long double square_arcsecond_to_steradian(long double square_arcsecond);

@@ -1,5 +1,6 @@
 #include "units.h"
-
+#include "constants.h"
+#include <cmath>
 
 //============================================================
 // Length Conversion Factors
@@ -52,8 +53,8 @@ constexpr long double radians_per_degree = 0.017453292519943295L;
 long double meter_to_centimeter(long double meter)
 
 {
-  
-  return meter / meters_per_centimeter;  
+
+  return meter / meters_per_centimeter;
 }
 
 long double centimeter_to_meter(long double centimeter)
@@ -73,7 +74,7 @@ long double meter_to_kilometer(long double meter)
 
 }
 
-  
+
 long double kilometer_to_meter(long double kilometer)
 
 {
@@ -91,7 +92,7 @@ long double meter_to_astronomical_unit(long double meter)
 }
 
 
-  
+
 long double astronomical_unit_to_meter(long double astronomical_unit)
 
 {
@@ -105,10 +106,10 @@ long double meter_to_light_year(long double meter)
 {
 
   return meter / meters_per_light_year;
-  
+
 }
 
-  
+
 long double light_year_to_meter(long double light_year)
 
 {
@@ -122,10 +123,10 @@ long double meter_to_parsec(long double meter)
 {
 
   return meter / meters_per_parsec;
-  
+
 }
 
-  
+
 long double parsec_to_meter(long double parsec)
 
 {
@@ -144,7 +145,7 @@ long double nanometer_to_meter(long double nanometer)
 {
 
   return nanometer * meters_per_nanometer;
-  
+
 }
 
 
@@ -153,7 +154,7 @@ long double meter_to_angstrom(long double meter)
 {
 
   return meter / meters_per_angstrom;
-  
+
 }
 
 long double angstrom_to_meter(long double angstrom)
@@ -171,7 +172,7 @@ long double meter_to_femtometer(long double meter)
 {
 
   return meter / meters_per_femtometer;
-  
+
 }
 
 
@@ -180,5 +181,44 @@ long double femtometer_to_meter(long double femtometer)
 {
 
   return femtometer * meters_per_femtometer;
+
+}
+
+
+long double radian_to_arcsecond(long double radian)
+
+{
+
+  return radian * (180.0L / pi) * 60.0L * 60.0L;
+
+}
+
+
+long double arcsecond_to_radian(long double arcsecond)
+
+{
+
+  return arcsecond * (pi / (180.0L * 60.0L * 60.0L));
+
+}
+
+
+long double steradian_to_square_arcsecond(long double steradian)
+
+{
+
+  long double arcseconds_per_radian = radian_to_arcsecond(1.0L);
+
+  return steradian * std::pow(arcseconds_per_radian, 2);
+
+}
+
+
+long double square_arcsecond_to_steradian(long double square_arcsecond)
+
+{
+  long double square_arcseconds_per_steradian =  steradian_to_square_arcsecond(1.0L);
+
+  return square_arcsecond / square_arcseconds_per_steradian;
 
 }

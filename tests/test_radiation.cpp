@@ -123,6 +123,30 @@ int main()
   long double percentage_difference = relative_difference * 100.0L;
 
   std::cout << "Percentage Wien-bisection difference: " << percentage_difference<< " %" <<std::endl;
-  
+
+  long double radiative_flux = radiative_flux_at_the_surface(T_eff_sun);
+
+  std::cout << "Radiative flux at the surface: "<< radiative_flux << " W m^-2" << std::endl;
+
+  long double stellar_luminosity = stellar_luminosity_from_temperature_and_radius(R_sun, T_eff_sun);
+
+  std::cout << "Stellar luminosity: " << stellar_luminosity << " W" << std::endl;
+
+  long double luminosity_absolute_difference = std::abs(stellar_luminosity - L_sun);
+
+  std::cout << "Luminosity absolute difference: " << luminosity_absolute_difference << " W" << std::endl;
+
+  long double luminosity_relative_difference = luminosity_absolute_difference / L_sun;
+
+  std::cout << "Luminosity relative difference: " << luminosity_relative_difference << std::endl;
+
+  long double percentage_luminosity_difference = luminosity_relative_difference * 100.0L;
+
+  std::cout << "Luminosity percentage difference: " << percentage_luminosity_difference << " %" << std::endl;
+
+  long double surface_brightness = surface_brightness_from_surface_flux(radiative_flux);
+
+  std::cout << "Surface brightness: " << surface_brightness << " W m^-2 sr^-1" << std::endl;
+
   return 0;
 }

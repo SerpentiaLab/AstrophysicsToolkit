@@ -2,6 +2,7 @@
 #include "constants.h"
 #include <cmath>
 #include "units.h"
+#include <limits>
 
 long double absolute_bolometric_magnitude_from_luminosity(long double luminosity)
 
@@ -59,5 +60,84 @@ long double distance_from_distance_modulus(long double distance_modulus)
   long double distance_pc = std::pow(10.0L, distance_modulus / 5 + 1);
 
   return  parsec_to_meter(distance_pc);
+
+}
+
+
+long double distance_from_parallax(long double parallax)
+
+{
+
+  if( parallax <= 0 )
+
+    {
+
+      return  std::numeric_limits<long double>::quiet_NaN();
+
+
+    }
+
+  return 1.0L / parallax;
+
+
+}
+
+
+long double parallax_from_distance(long double distance)
+
+{
+
+  if(distance <= 0 )
+
+    {
+
+      return  std::numeric_limits<long double>::quiet_NaN();
+
+
+    }
+
+  return 1.0L / distance;
+
+
+
+}
+
+
+long double angular_radius_from_radius_and_distance(long double radius, long double distance)
+
+{
+
+  if(radius <= 0 || distance <= 0)
+
+    {
+
+      return  std::numeric_limits<long double>::quiet_NaN();
+
+
+    }
+
+
+  return radius / distance;
+
+
+}
+
+
+long double solid_angle_from_angular_radius(long double angular_radius)
+
+{
+
+  if(angular_radius < 0)
+
+    {
+
+      return  std::numeric_limits<long double>::quiet_NaN();
+
+
+    }
+
+
+  return pi * std::pow(angular_radius, 2);
+
 
 }
